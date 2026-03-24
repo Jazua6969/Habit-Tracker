@@ -1,0 +1,471 @@
+kotlin version: 2.0.21
+error message: org.jetbrains.kotlin.backend.common.BackendException: Backend Internal error: Exception during IR lowering
+File being compiled: C:/Users/samra/AndroidStudioProjects/Lavenda/app/src/main/java/com/example/lavenda/GridActivity.kt
+The root cause java.lang.RuntimeException was thrown at: org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:47)
+	at org.jetbrains.kotlin.backend.common.CodegenUtil.reportBackendException(CodegenUtil.kt:253)
+	at org.jetbrains.kotlin.backend.common.CodegenUtil.reportBackendException$default(CodegenUtil.kt:236)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invokeSequential(performByIrFile.kt:65)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invoke(performByIrFile.kt:52)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invoke(performByIrFile.kt:38)
+	at org.jetbrains.kotlin.backend.common.phaser.NamedCompilerPhase.phaseBody(CompilerPhase.kt:166)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.CompositePhase.invoke(PhaseBuilders.kt:27)
+	at org.jetbrains.kotlin.backend.common.phaser.CompositePhase.invoke(PhaseBuilders.kt:14)
+	at org.jetbrains.kotlin.backend.common.phaser.NamedCompilerPhase.phaseBody(CompilerPhase.kt:166)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.CompilerPhaseKt.invokeToplevel(CompilerPhase.kt:62)
+	at org.jetbrains.kotlin.backend.jvm.JvmIrCodegenFactory.invokeCodegen(JvmIrCodegenFactory.kt:371)
+	at org.jetbrains.kotlin.codegen.CodegenFactory.generateModule(CodegenFactory.kt:47)
+	at org.jetbrains.kotlin.backend.jvm.JvmIrCodegenFactory.generateModuleInFrontendIRMode(JvmIrCodegenFactory.kt:433)
+	at org.jetbrains.kotlin.cli.jvm.compiler.pipeline.JvmCompilerPipelineKt.generateCodeFromIr(jvmCompilerPipeline.kt:246)
+	at org.jetbrains.kotlin.cli.jvm.compiler.pipeline.JvmCompilerPipelineKt.compileModulesUsingFrontendIrAndLightTree(jvmCompilerPipeline.kt:142)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecute(K2JVMCompiler.kt:148)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecute(K2JVMCompiler.kt:43)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:103)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:49)
+	at org.jetbrains.kotlin.cli.common.CLITool.exec(CLITool.kt:101)
+	at org.jetbrains.kotlin.incremental.IncrementalJvmCompilerRunner.runCompiler(IncrementalJvmCompilerRunner.kt:464)
+	at org.jetbrains.kotlin.incremental.IncrementalJvmCompilerRunner.runCompiler(IncrementalJvmCompilerRunner.kt:73)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.doCompile(IncrementalCompilerRunner.kt:506)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileImpl(IncrementalCompilerRunner.kt:423)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.tryCompileIncrementally$lambda$9$compile(IncrementalCompilerRunner.kt:249)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.tryCompileIncrementally(IncrementalCompilerRunner.kt:267)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compile(IncrementalCompilerRunner.kt:120)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.execIncrementalCompiler(CompileServiceImpl.kt:675)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.access$execIncrementalCompiler(CompileServiceImpl.kt:92)
+	at org.jetbrains.kotlin.daemon.CompileServiceImpl.compile(CompileServiceImpl.kt:1660)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.RuntimeException: Exception while generating code for:
+FUN name:loadGridData visibility:private modality:FINAL <> ($this:com.example.lavenda.GridActivity) returnType:kotlin.Unit
+  $this: VALUE_PARAMETER name:<this> type:com.example.lavenda.GridActivity
+  BLOCK_BODY
+    VAR name:container type:@[FlexibleNullability] android.widget.LinearLayout? [val]
+      CALL 'public open fun findViewById <T> (p0: kotlin.Int): @[FlexibleNullability] T of com.example.lavenda.GridActivity.findViewById? [fake_override] declared in com.example.lavenda.GridActivity' type=@[FlexibleNullability] android.widget.LinearLayout? origin=null
+        <T>: @[FlexibleNullability] android.widget.LinearLayout?
+        $this: GET_VAR '<this>: com.example.lavenda.GridActivity declared in com.example.lavenda.GridActivity.loadGridData' type=com.example.lavenda.GridActivity origin=null
+        p0: GET_FIELD 'FIELD IR_EXTERNAL_JAVA_DECLARATION_STUB name:gridContainer type:kotlin.Int visibility:public [static] declared in com.example.lavenda.R.id' type=kotlin.Int superQualifierSymbol=com.example.lavenda.R.id origin=null
+    COMPOSITE type=kotlin.Unit origin=null
+      CALL 'public final fun launch$default (context: kotlin.coroutines.CoroutineContext?, start: kotlinx.coroutines.CoroutineStart?, block: @[ExtensionFunctionType] kotlin.coroutines.SuspendFunction1<kotlinx.coroutines.CoroutineScope, kotlin.Unit>, $mask0: kotlin.Int, $handler: kotlin.Any?): kotlinx.coroutines.Job declared in kotlinx.coroutines.BuildersKt' type=kotlinx.coroutines.Job origin=DEFAULT_DISPATCH_CALL
+        $receiver: CALL 'public final fun <get-lifecycleScope> (): androidx.lifecycle.LifecycleCoroutineScope declared in androidx.lifecycle.LifecycleOwnerKt' type=androidx.lifecycle.LifecycleCoroutineScope origin=GET_PROPERTY
+          $receiver: GET_VAR '<this>: com.example.lavenda.GridActivity declared in com.example.lavenda.GridActivity.loadGridData' type=com.example.lavenda.GridActivity origin=null
+        context: COMPOSITE type=kotlin.coroutines.CoroutineContext? origin=DEFAULT_VALUE
+          CONST Null type=kotlin.coroutines.CoroutineContext? value=null
+        start: COMPOSITE type=kotlinx.coroutines.CoroutineStart? origin=DEFAULT_VALUE
+          CONST Null type=kotlinx.coroutines.CoroutineStart? value=null
+        block: BLOCK type=com.example.lavenda.GridActivity.loadGridData.<no name provided> origin=null
+          CLASS SUSPEND_LAMBDA CLASS name:<no name provided> modality:FINAL visibility:public/*package*/ superTypes:[kotlin.coroutines.jvm.internal.SuspendLambda; kotlin.jvm.functions.Function2<kotlinx.coroutines.CoroutineScope, kotlin.coroutines.Continuation<kotlin.Unit>?, kotlin.Any?>]
+            $this: VALUE_PARAMETER INSTANCE_RECEIVER name:<this> type:com.example.lavenda.GridActivity.loadGridData.<no name provided>
+            FIELD name:label type:kotlin.Int visibility:public/*package*/
+            CONSTRUCTOR SUSPEND_LAMBDA visibility:public/*package*/ <> (this$0:com.example.lavenda.GridActivity, $container:@[FlexibleNullability] android.widget.LinearLayout?, $completion:kotlin.coroutines.Continuation<com.example.lavenda.GridActivity.loadGridData.<no name provided>>?) returnType:com.example.lavenda.GridActivity.loadGridData.<no name provided> [primary]
+              VALUE_PARAMETER BOUND_RECEIVER_PARAMETER name:this$0 index:0 type:com.example.lavenda.GridActivity
+              VALUE_PARAMETER BOUND_VALUE_PARAMETER name:$container index:1 type:@[FlexibleNullability] android.widget.LinearLayout?
+              VALUE_PARAMETER name:$completion index:2 type:kotlin.coroutines.Continuation<com.example.lavenda.GridActivity.loadGridData.<no name provided>>?
+              BLOCK_BODY
+                SET_FIELD 'FIELD FIELD_FOR_CAPTURED_VALUE name:this$0 type:com.example.lavenda.GridActivity visibility:public/*package*/ [final] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>' type=kotlin.Unit origin=INITIALIZER_OF_FIELD_FOR_CAPTURED_VALUE
+                  receiver: GET_VAR '<this>: com.example.lavenda.GridActivity.loadGridData.<no name provided> declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>' type=com.example.lavenda.GridActivity.loadGridData.<no name provided> origin=null
+                  value: GET_VAR 'this$0: com.example.lavenda.GridActivity declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.<init>' type=com.example.lavenda.GridActivity origin=null
+                SET_FIELD 'FIELD FIELD_FOR_CAPTURED_VALUE name:$container type:@[FlexibleNullability] android.widget.LinearLayout? visibility:public/*package*/ [final] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>' type=kotlin.Unit origin=INITIALIZER_OF_FIELD_FOR_CAPTURED_VALUE
+                  receiver: GET_VAR '<this>: com.example.lavenda.GridActivity.loadGridData.<no name provided> declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>' type=com.example.lavenda.GridActivity.loadGridData.<no name provided> origin=null
+                  value: GET_VAR '$container: @[FlexibleNullability] android.widget.LinearLayout? declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.<init>' type=@[FlexibleNullability] android.widget.LinearLayout? origin=null
+                DELEGATING_CONSTRUCTOR_CALL 'public constructor <init> (arity: kotlin.Int, $completion: kotlin.coroutines.Continuation<kotlin.Any?>?) declared in kotlin.coroutines.jvm.internal.SuspendLambda'
+                  arity: CONST Int type=kotlin.Int value=2
+                  $completion: GET_VAR '$completion: kotlin.coroutines.Continuation<com.example.lavenda.GridActivity.loadGridData.<no name provided>>? declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.<init>' type=kotlin.coroutines.Continuation<com.example.lavenda.GridActivity.loadGridData.<no name provided>>? origin=null
+                BLOCK type=kotlin.Unit origin=null
+            FUN name:invokeSuspend visibility:public modality:FINAL <> ($this:com.example.lavenda.GridActivity.loadGridData.<no name provided>, $result:kotlin.Result<kotlin.Any?>) returnType:kotlin.Any?
+              overridden:
+                protected abstract fun invokeSuspend ($result: kotlin.Result<kotlin.Any?>): kotlin.Any? declared in kotlin.coroutines.jvm.internal.SuspendLambda
+              $this: VALUE_PARAMETER INSTANCE_RECEIVER name:<this> type:com.example.lavenda.GridActivity.loadGridData.<no name provided>
+              VALUE_PARAMETER name:$result index:0 type:kotlin.Result<kotlin.Any?>
+              BLOCK_BODY
+                VAR name:placeholderHabits type:kotlin.collections.List<kotlin.String> [val]
+                  CALL 'public final fun listOf <T> (vararg elements: T of kotlin.collections.CollectionsKt.listOf): kotlin.collections.List<T of kotlin.collections.CollectionsKt.listOf> declared in kotlin.collections.CollectionsKt' type=kotlin.collections.List<kotlin.String> origin=null
+                    <T>: kotlin.String
+                    elements: BLOCK type=kotlin.Array<out kotlin.String> origin=null
+                      VAR IR_TEMPORARY_VARIABLE name:tmp0 type:kotlin.Array<out kotlin.String> [val]
+                        CALL 'public final fun arrayOfNulls <T> (size: kotlin.Int): kotlin.Array<T of kotlin.arrayOfNulls?> declared in kotlin' type=kotlin.Array<out kotlin.String> origin=null
+                          <T>: kotlin.String
+                          size: CONST Int type=kotlin.Int value=3
+                      CALL 'public final fun set (index: kotlin.Int, value: T of kotlin.Array): kotlin.Unit [operator] declared in kotlin.Array' type=kotlin.Unit origin=null
+                        $this: GET_VAR 'val tmp0: kotlin.Array<out kotlin.String> [val] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend' type=kotlin.Array<out kotlin.String> origin=null
+                        index: CONST Int type=kotlin.Int value=0
+                        value: CONST String type=kotlin.String value="Drink Water"
+                      CALL 'public final fun set (index: kotlin.Int, value: T of kotlin.Array): kotlin.Unit [operator] declared in kotlin.Array' type=kotlin.Unit origin=null
+                        $this: GET_VAR 'val tmp0: kotlin.Array<out kotlin.String> [val] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend' type=kotlin.Array<out kotlin.String> origin=null
+                        index: CONST Int type=kotlin.Int value=1
+                        value: CONST String type=kotlin.String value="Meditation"
+                      CALL 'public final fun set (index: kotlin.Int, value: T of kotlin.Array): kotlin.Unit [operator] declared in kotlin.Array' type=kotlin.Unit origin=null
+                        $this: GET_VAR 'val tmp0: kotlin.Array<out kotlin.String> [val] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend' type=kotlin.Array<out kotlin.String> origin=null
+                        index: CONST Int type=kotlin.Int value=2
+                        value: CONST String type=kotlin.String value="Exercise"
+                      GET_VAR 'val tmp0: kotlin.Array<out kotlin.String> [val] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend' type=kotlin.Array<out kotlin.String> origin=null
+                CALL 'public final fun forEach <T> (action: kotlin.Function1<T of kotlin.collections.CollectionsKt.forEach, kotlin.Unit>): kotlin.Unit [inline] declared in kotlin.collections.CollectionsKt' type=kotlin.Unit origin=null
+                  <T>: kotlin.String
+                  $receiver: GET_VAR 'val placeholderHabits: kotlin.collections.List<kotlin.String> [val] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend' type=kotlin.collections.List<kotlin.String> origin=null
+                  action: BLOCK type=kotlin.Function1<kotlin.String, kotlin.Unit> origin=LAMBDA
+                    COMPOSITE type=kotlin.Unit origin=null
+                    FUNCTION_REFERENCE 'private final fun invokeSuspend$lambda$2 (this$0: com.example.lavenda.GridActivity, $container: @[FlexibleNullability] android.widget.LinearLayout?, habitName: kotlin.String): kotlin.Unit declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>' type=kotlin.Function1<kotlin.String, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+                      this$0: GET_FIELD 'FIELD FIELD_FOR_CAPTURED_VALUE name:this$0 type:com.example.lavenda.GridActivity visibility:public/*package*/ [final] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>' type=com.example.lavenda.GridActivity origin=null
+                        receiver: GET_VAR '<this>: com.example.lavenda.GridActivity.loadGridData.<no name provided> declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend' type=com.example.lavenda.GridActivity.loadGridData.<no name provided> origin=null
+                      $container: GET_FIELD 'FIELD FIELD_FOR_CAPTURED_VALUE name:$container type:@[FlexibleNullability] android.widget.LinearLayout? visibility:public/*package*/ [final] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>' type=@[FlexibleNullability] android.widget.LinearLayout? origin=null
+                        receiver: GET_VAR '<this>: com.example.lavenda.GridActivity.loadGridData.<no name provided> declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend' type=com.example.lavenda.GridActivity.loadGridData.<no name provided> origin=null
+            FUN name:create visibility:public modality:FINAL <> ($this:com.example.lavenda.GridActivity.loadGridData.<no name provided>, value:kotlin.Any?, $completion:kotlin.coroutines.Continuation<kotlin.Nothing>) returnType:kotlin.coroutines.Continuation<kotlin.Unit>
+              overridden:
+                public open fun create (value: kotlin.Any?, $completion: kotlin.coroutines.Continuation<kotlin.Nothing>): kotlin.coroutines.Continuation<kotlin.Unit> declared in kotlin.coroutines.jvm.internal.SuspendLambda
+              $this: VALUE_PARAMETER INSTANCE_RECEIVER name:<this> type:com.example.lavenda.GridActivity.loadGridData.<no name provided>
+              VALUE_PARAMETER name:value index:0 type:kotlin.Any?
+              VALUE_PARAMETER name:$completion index:1 type:kotlin.coroutines.Continuation<kotlin.Nothing>
+              BLOCK_BODY
+                RETURN type=kotlin.Nothing from='public final fun create (value: kotlin.Any?, $completion: kotlin.coroutines.Continuation<kotlin.Nothing>): kotlin.coroutines.Continuation<kotlin.Unit> declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>'
+                  CONSTRUCTOR_CALL 'public/*package*/ constructor <init> (this$0: com.example.lavenda.GridActivity, $container: @[FlexibleNullability] android.widget.LinearLayout?, $completion: kotlin.coroutines.Continuation<com.example.lavenda.GridActivity.loadGridData.<no name provided>>?) [primary] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>' type=com.example.lavenda.GridActivity.loadGridData.<no name provided> origin=null
+                    this$0: GET_FIELD 'FIELD FIELD_FOR_CAPTURED_VALUE name:this$0 type:com.example.lavenda.GridActivity visibility:public/*package*/ [final] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>' type=com.example.lavenda.GridActivity origin=null
+                      receiver: GET_VAR '<this>: com.example.lavenda.GridActivity.loadGridData.<no name provided> declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.create' type=com.example.lavenda.GridActivity.loadGridData.<no name provided> origin=null
+                    $container: GET_FIELD 'FIELD FIELD_FOR_CAPTURED_VALUE name:$container type:@[FlexibleNullability] android.widget.LinearLayout? visibility:public/*package*/ [final] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>' type=@[FlexibleNullability] android.widget.LinearLayout? origin=null
+                      receiver: GET_VAR '<this>: com.example.lavenda.GridActivity.loadGridData.<no name provided> declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.create' type=com.example.lavenda.GridActivity.loadGridData.<no name provided> origin=null
+                    $completion: GET_VAR '$completion: kotlin.coroutines.Continuation<kotlin.Nothing> declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.create' type=kotlin.coroutines.Continuation<kotlin.Nothing> origin=null
+            FUN name:invoke visibility:public modality:FINAL <> ($this:com.example.lavenda.GridActivity.loadGridData.<no name provided>, p1:kotlinx.coroutines.CoroutineScope, p2:kotlin.coroutines.Continuation<kotlin.Unit>?) returnType:kotlin.Any?
+              overridden:
+                public abstract fun invoke (p1: P1 of kotlin.jvm.functions.Function2, p2: P2 of kotlin.jvm.functions.Function2): R of kotlin.jvm.functions.Function2 declared in kotlin.jvm.functions.Function2
+              $this: VALUE_PARAMETER INSTANCE_RECEIVER name:<this> type:com.example.lavenda.GridActivity.loadGridData.<no name provided>
+              VALUE_PARAMETER name:p1 index:0 type:kotlinx.coroutines.CoroutineScope
+              VALUE_PARAMETER name:p2 index:1 type:kotlin.coroutines.Continuation<kotlin.Unit>?
+              BLOCK_BODY
+                RETURN type=kotlin.Nothing from='public final fun invoke (p1: kotlinx.coroutines.CoroutineScope, p2: kotlin.coroutines.Continuation<kotlin.Unit>?): kotlin.Any? declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>'
+                  CALL 'public final fun invokeSuspend ($result: kotlin.Result<kotlin.Any?>): kotlin.Any? declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>' type=kotlin.Any? origin=null
+                    $this: TYPE_OP type=com.example.lavenda.GridActivity.loadGridData.<no name provided> origin=IMPLICIT_CAST typeOperand=com.example.lavenda.GridActivity.loadGridData.<no name provided>
+                      CALL 'public final fun create (value: kotlin.Any?, $completion: kotlin.coroutines.Continuation<kotlin.Nothing>): kotlin.coroutines.Continuation<kotlin.Unit> declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>' type=kotlin.coroutines.Continuation<kotlin.Unit> origin=null
+                        $this: GET_VAR '<this>: com.example.lavenda.GridActivity.loadGridData.<no name provided> declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invoke' type=com.example.lavenda.GridActivity.loadGridData.<no name provided> origin=null
+                        value: GET_VAR 'p1: kotlinx.coroutines.CoroutineScope declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invoke' type=kotlinx.coroutines.CoroutineScope origin=null
+                        $completion: GET_VAR 'p2: kotlin.coroutines.Continuation<kotlin.Unit>? declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invoke' type=kotlin.coroutines.Continuation<kotlin.Unit>? origin=null
+                    $result: CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=kotlin.Result<kotlin.Any?> origin=null
+                      <T>: kotlin.Any?
+                      <R>: kotlin.Result<kotlin.Any?>
+                      v: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:kotlin.Unit visibility:public [final,static] declared in kotlin.Unit' type=kotlin.Unit origin=null
+            FIELD FIELD_FOR_CAPTURED_VALUE name:this$0 type:com.example.lavenda.GridActivity visibility:public/*package*/ [final]
+            FIELD FIELD_FOR_CAPTURED_VALUE name:$container type:@[FlexibleNullability] android.widget.LinearLayout? visibility:public/*package*/ [final]
+            FUN INLINE_LAMBDA name:invokeSuspend$lambda$2$lambda$0 visibility:private modality:FINAL <> ($receiver:android.widget.LinearLayout) returnType:kotlin.Unit
+              $receiver: VALUE_PARAMETER name:$this$apply type:android.widget.LinearLayout
+              BLOCK_BODY
+                VAR name:$i$a$-apply-GridActivity$loadGridData$1$1$row$1 type:kotlin.Int [val]
+                  CONST Int type=kotlin.Int value=0
+                CALL 'public open fun setOrientation (p0: kotlin.Int): kotlin.Unit declared in android.widget.LinearLayout' type=kotlin.Unit origin=EQ
+                  $this: GET_VAR '$this$apply: android.widget.LinearLayout declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2$lambda$0' type=android.widget.LinearLayout origin=null
+                  p0: CONST Int type=kotlin.Int value=0
+                SET_FIELD 'FIELD IR_EXTERNAL_JAVA_DECLARATION_STUB name:padding type:kotlin.Int visibility:public [final,static] declared in android.R.attr' type=kotlin.Unit superQualifierSymbol=android.R.attr origin=EQ
+                  value: CONST Int type=kotlin.Int value=20
+            FUN INLINE_LAMBDA name:invokeSuspend$lambda$2$lambda$1 visibility:private modality:FINAL <> ($receiver:android.widget.TextView, $habitName:kotlin.String) returnType:kotlin.Unit
+              $receiver: VALUE_PARAMETER name:$this$apply type:android.widget.TextView
+              VALUE_PARAMETER BOUND_VALUE_PARAMETER name:$habitName index:0 type:kotlin.String
+              BLOCK_BODY
+                VAR name:$i$a$-apply-GridActivity$loadGridData$1$1$nameTv$1 type:kotlin.Int [val]
+                  CONST Int type=kotlin.Int value=0
+                CALL 'public final fun setText (p0: @[FlexibleNullability] kotlin.CharSequence?): kotlin.Unit declared in android.widget.TextView' type=kotlin.Unit origin=EQ
+                  $this: GET_VAR '$this$apply: android.widget.TextView declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2$lambda$1' type=android.widget.TextView origin=null
+                  p0: GET_VAR '$habitName: kotlin.String declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2$lambda$1' type=kotlin.String origin=null
+                CALL 'public open fun setWidth (p0: kotlin.Int): kotlin.Unit declared in android.widget.TextView' type=kotlin.Unit origin=EQ
+                  $this: GET_VAR '$this$apply: android.widget.TextView declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2$lambda$1' type=android.widget.TextView origin=null
+                  p0: CONST Int type=kotlin.Int value=300
+                CALL 'public open fun setTextColor (p0: kotlin.Int): kotlin.Unit declared in android.widget.TextView' type=kotlin.Unit origin=null
+                  $this: GET_VAR '$this$apply: android.widget.TextView declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2$lambda$1' type=android.widget.TextView origin=null
+                  p0: CALL 'public open fun parseColor (p0: @[FlexibleNullability] kotlin.String?): kotlin.Int declared in android.graphics.Color' type=kotlin.Int origin=null
+                    p0: CONST String type=kotlin.String value="#4A148C"
+            FUN INLINE_LAMBDA name:invokeSuspend$lambda$2 visibility:private modality:FINAL <> (this$0:com.example.lavenda.GridActivity, $container:@[FlexibleNullability] android.widget.LinearLayout?, habitName:kotlin.String) returnType:kotlin.Unit
+              VALUE_PARAMETER BOUND_VALUE_PARAMETER name:this$0 index:0 type:com.example.lavenda.GridActivity
+              VALUE_PARAMETER BOUND_VALUE_PARAMETER name:$container index:1 type:@[FlexibleNullability] android.widget.LinearLayout?
+              VALUE_PARAMETER name:habitName index:2 type:kotlin.String
+              BLOCK_BODY
+                VAR name:$i$a$-forEach-GridActivity$loadGridData$1$1 type:kotlin.Int [val]
+                  CONST Int type=kotlin.Int value=0
+                VAR name:row type:android.widget.LinearLayout [val]
+                  CALL 'public final fun apply <T> (block: @[ExtensionFunctionType] kotlin.Function1<T of kotlin.StandardKt.apply, kotlin.Unit>): T of kotlin.StandardKt.apply [inline] declared in kotlin.StandardKt' type=android.widget.LinearLayout origin=null
+                    <T>: android.widget.LinearLayout
+                    $receiver: CONSTRUCTOR_CALL 'public constructor <init> (p0: @[FlexibleNullability] android.content.Context?) declared in android.widget.LinearLayout' type=android.widget.LinearLayout origin=null
+                      p0: GET_VAR 'this$0: com.example.lavenda.GridActivity declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2' type=com.example.lavenda.GridActivity origin=null
+                    block: BLOCK type=@[ExtensionFunctionType] kotlin.Function1<android.widget.LinearLayout, kotlin.Unit> origin=LAMBDA
+                      COMPOSITE type=kotlin.Unit origin=null
+                      FUNCTION_REFERENCE 'private final fun invokeSuspend$lambda$2$lambda$0 (): kotlin.Unit declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>' type=@[ExtensionFunctionType] kotlin.Function1<android.widget.LinearLayout, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+                VAR name:nameTv type:android.widget.TextView [val]
+                  CALL 'public final fun apply <T> (block: @[ExtensionFunctionType] kotlin.Function1<T of kotlin.StandardKt.apply, kotlin.Unit>): T of kotlin.StandardKt.apply [inline] declared in kotlin.StandardKt' type=android.widget.TextView origin=null
+                    <T>: android.widget.TextView
+                    $receiver: CONSTRUCTOR_CALL 'public constructor <init> (p0: @[FlexibleNullability] android.content.Context?) declared in android.widget.TextView' type=android.widget.TextView origin=null
+                      p0: GET_VAR 'this$0: com.example.lavenda.GridActivity declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2' type=com.example.lavenda.GridActivity origin=null
+                    block: BLOCK type=@[ExtensionFunctionType] kotlin.Function1<android.widget.TextView, kotlin.Unit> origin=LAMBDA
+                      COMPOSITE type=kotlin.Unit origin=null
+                      FUNCTION_REFERENCE 'private final fun invokeSuspend$lambda$2$lambda$1 ($habitName: kotlin.String): kotlin.Unit declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>' type=@[ExtensionFunctionType] kotlin.Function1<android.widget.TextView, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+                        $habitName: GET_VAR 'habitName: kotlin.String declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2' type=kotlin.String origin=null
+                CALL 'public open fun addView (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit [fake_override] declared in android.widget.LinearLayout' type=kotlin.Unit origin=null
+                  $this: GET_VAR 'val row: android.widget.LinearLayout [val] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2' type=android.widget.LinearLayout origin=null
+                  p0: GET_VAR 'val nameTv: android.widget.TextView [val] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2' type=android.widget.TextView origin=null
+                BLOCK type=kotlin.Unit origin=FOR_LOOP
+                  COMPOSITE type=kotlin.Unit origin=null
+                    VAR FOR_LOOP_VARIABLE name:i type:kotlin.Int [var]
+                      CONST Int type=kotlin.Int value=1
+                  DO_WHILE label=GridActivity$loadGridData$<no name provided>$invokeSuspend$lambda$21 origin=DO_WHILE_COUNTER_LOOP
+                    body: COMPOSITE type=kotlin.Unit origin=FOR_LOOP_INNER_WHILE
+                      COMPOSITE type=kotlin.Unit origin=FOR_LOOP_NEXT
+                        WHEN type=kotlin.Unit origin=null
+                          BRANCH
+                            if: CALL 'public final fun not (): kotlin.Boolean [operator] declared in kotlin.Boolean' type=kotlin.Boolean origin=null
+                              $this: CALL 'public final fun less (arg0: kotlin.Int, arg1: kotlin.Int): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=null
+                                arg0: GET_VAR 'var i: kotlin.Int [var] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2' type=kotlin.Int origin=null
+                                arg1: CONST Int type=kotlin.Int value=8
+                            then: BREAK label=null loop.label=GridActivity$loadGridData$<no name provided>$invokeSuspend$lambda$21
+                      BLOCK type=kotlin.Unit origin=null
+                        VAR name:cb type:android.widget.CheckBox [val]
+                          CONSTRUCTOR_CALL 'public constructor <init> (p0: @[FlexibleNullability] android.content.Context?) declared in android.widget.CheckBox' type=android.widget.CheckBox origin=null
+                            p0: GET_VAR 'this$0: com.example.lavenda.GridActivity declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2' type=com.example.lavenda.GridActivity origin=null
+                        CALL 'public open fun addView (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit [fake_override] declared in android.widget.LinearLayout' type=kotlin.Unit origin=null
+                          $this: GET_VAR 'val row: android.widget.LinearLayout [val] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2' type=android.widget.LinearLayout origin=null
+                          p0: GET_VAR 'val cb: android.widget.CheckBox [val] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2' type=android.widget.CheckBox origin=null
+                    condition: COMPOSITE type=kotlin.Boolean origin=null
+                      CALL 'public final fun <int-prefix-incr-decr> (value: kotlin.Int, delta: kotlin.Int): kotlin.Int declared in kotlin.jvm.internal' type=kotlin.Int origin=null
+                        value: GET_VAR 'var i: kotlin.Int [var] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2' type=kotlin.Int origin=null
+                        delta: CONST Int type=kotlin.Int value=1
+                      CONST Boolean type=kotlin.Boolean value=true
+                CALL 'public open fun addView (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit [fake_override] declared in android.widget.LinearLayout' type=kotlin.Unit origin=null
+                  $this: GET_VAR '$container: @[FlexibleNullability] android.widget.LinearLayout? declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2' type=@[FlexibleNullability] android.widget.LinearLayout? origin=null
+                  p0: GET_VAR 'val row: android.widget.LinearLayout [val] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2' type=android.widget.LinearLayout origin=null
+            FUN BRIDGE name:invoke visibility:public modality:OPEN <> ($this:com.example.lavenda.GridActivity.loadGridData.<no name provided>, p1:kotlin.Any?, p2:kotlin.Any?) returnType:kotlin.Any?
+              $this: VALUE_PARAMETER INSTANCE_RECEIVER name:<this> type:com.example.lavenda.GridActivity.loadGridData.<no name provided>
+              VALUE_PARAMETER BRIDGE name:p1 index:0 type:kotlin.Any?
+              VALUE_PARAMETER BRIDGE name:p2 index:1 type:kotlin.Any?
+              EXPRESSION_BODY
+                RETURN type=kotlin.Nothing from='public open fun invoke (p1: kotlin.Any?, p2: kotlin.Any?): kotlin.Any? declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>'
+                  CALL 'public final fun invoke (p1: kotlinx.coroutines.CoroutineScope, p2: kotlin.coroutines.Continuation<kotlin.Unit>?): kotlin.Any? declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>' type=kotlin.Any? origin=BRIDGE_DELEGATION
+                    $this: GET_VAR '<this>: com.example.lavenda.GridActivity.loadGridData.<no name provided> declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invoke' type=com.example.lavenda.GridActivity.loadGridData.<no name provided> origin=null
+                    p1: TYPE_OP type=kotlinx.coroutines.CoroutineScope origin=IMPLICIT_CAST typeOperand=kotlinx.coroutines.CoroutineScope
+                      GET_VAR 'p1: kotlin.Any? declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invoke' type=kotlin.Any? origin=null
+                    p2: TYPE_OP type=kotlin.coroutines.Continuation<*> origin=IMPLICIT_CAST typeOperand=kotlin.coroutines.Continuation<*>
+                      GET_VAR 'p2: kotlin.Any? declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invoke' type=kotlin.Any? origin=null
+          CONSTRUCTOR_CALL 'public/*package*/ constructor <init> (this$0: com.example.lavenda.GridActivity, $container: @[FlexibleNullability] android.widget.LinearLayout?, $completion: kotlin.coroutines.Continuation<com.example.lavenda.GridActivity.loadGridData.<no name provided>>?) [primary] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>' type=com.example.lavenda.GridActivity.loadGridData.<no name provided> origin=null
+            this$0: GET_VAR '<this>: com.example.lavenda.GridActivity declared in com.example.lavenda.GridActivity.loadGridData' type=com.example.lavenda.GridActivity origin=null
+            $container: GET_VAR 'val container: @[FlexibleNullability] android.widget.LinearLayout? [val] declared in com.example.lavenda.GridActivity.loadGridData' type=@[FlexibleNullability] android.widget.LinearLayout? origin=null
+            $completion: CONST Null type=kotlin.Nothing? value=null
+        $mask0: CONST Int type=kotlin.Int value=3
+        $handler: CONST Null type=kotlin.Any? value=null
+      COMPOSITE type=kotlin.Unit origin=null
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:47)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate$default(FunctionCodegen.kt:40)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generateMethodNode(ClassCodegen.kt:406)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generateMethod(ClassCodegen.kt:423)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generate(ClassCodegen.kt:168)
+	at org.jetbrains.kotlin.backend.jvm.FileCodegen.lower(JvmPhases.kt:39)
+	at org.jetbrains.kotlin.backend.common.phaser.PhaseFactoriesKt.createFilePhase$lambda$4(PhaseFactories.kt:71)
+	at org.jetbrains.kotlin.backend.common.phaser.PhaseBuildersKt$createSimpleNamedCompilerPhase$1.phaseBody(PhaseBuilders.kt:69)
+	at org.jetbrains.kotlin.backend.common.phaser.SimpleNamedCompilerPhase.phaseBody(CompilerPhase.kt:226)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invokeSequential(performByIrFile.kt:62)
+	... 44 more
+Caused by: java.lang.RuntimeException: Exception while generating code for:
+FUN name:invokeSuspend visibility:public modality:FINAL <> ($this:com.example.lavenda.GridActivity.loadGridData.<no name provided>, $result:kotlin.Result<kotlin.Any?>) returnType:kotlin.Any?
+  overridden:
+    protected abstract fun invokeSuspend ($result: kotlin.Result<kotlin.Any?>): kotlin.Any? declared in kotlin.coroutines.jvm.internal.SuspendLambda
+  $this: VALUE_PARAMETER INSTANCE_RECEIVER name:<this> type:com.example.lavenda.GridActivity.loadGridData.<no name provided>
+  VALUE_PARAMETER name:$result index:0 type:kotlin.Result<kotlin.Any?>
+  BLOCK_BODY
+    VAR name:placeholderHabits type:kotlin.collections.List<kotlin.String> [val]
+      CALL 'public final fun listOf <T> (vararg elements: T of kotlin.collections.CollectionsKt.listOf): kotlin.collections.List<T of kotlin.collections.CollectionsKt.listOf> declared in kotlin.collections.CollectionsKt' type=kotlin.collections.List<kotlin.String> origin=null
+        <T>: kotlin.String
+        elements: BLOCK type=kotlin.Array<out kotlin.String> origin=null
+          VAR IR_TEMPORARY_VARIABLE name:tmp0 type:kotlin.Array<out kotlin.String> [val]
+            CALL 'public final fun arrayOfNulls <T> (size: kotlin.Int): kotlin.Array<T of kotlin.arrayOfNulls?> declared in kotlin' type=kotlin.Array<out kotlin.String> origin=null
+              <T>: kotlin.String
+              size: CONST Int type=kotlin.Int value=3
+          CALL 'public final fun set (index: kotlin.Int, value: T of kotlin.Array): kotlin.Unit [operator] declared in kotlin.Array' type=kotlin.Unit origin=null
+            $this: GET_VAR 'val tmp0: kotlin.Array<out kotlin.String> [val] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend' type=kotlin.Array<out kotlin.String> origin=null
+            index: CONST Int type=kotlin.Int value=0
+            value: CONST String type=kotlin.String value="Drink Water"
+          CALL 'public final fun set (index: kotlin.Int, value: T of kotlin.Array): kotlin.Unit [operator] declared in kotlin.Array' type=kotlin.Unit origin=null
+            $this: GET_VAR 'val tmp0: kotlin.Array<out kotlin.String> [val] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend' type=kotlin.Array<out kotlin.String> origin=null
+            index: CONST Int type=kotlin.Int value=1
+            value: CONST String type=kotlin.String value="Meditation"
+          CALL 'public final fun set (index: kotlin.Int, value: T of kotlin.Array): kotlin.Unit [operator] declared in kotlin.Array' type=kotlin.Unit origin=null
+            $this: GET_VAR 'val tmp0: kotlin.Array<out kotlin.String> [val] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend' type=kotlin.Array<out kotlin.String> origin=null
+            index: CONST Int type=kotlin.Int value=2
+            value: CONST String type=kotlin.String value="Exercise"
+          GET_VAR 'val tmp0: kotlin.Array<out kotlin.String> [val] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend' type=kotlin.Array<out kotlin.String> origin=null
+    CALL 'public final fun forEach <T> (action: kotlin.Function1<T of kotlin.collections.CollectionsKt.forEach, kotlin.Unit>): kotlin.Unit [inline] declared in kotlin.collections.CollectionsKt' type=kotlin.Unit origin=null
+      <T>: kotlin.String
+      $receiver: GET_VAR 'val placeholderHabits: kotlin.collections.List<kotlin.String> [val] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend' type=kotlin.collections.List<kotlin.String> origin=null
+      action: BLOCK type=kotlin.Function1<kotlin.String, kotlin.Unit> origin=LAMBDA
+        COMPOSITE type=kotlin.Unit origin=null
+        FUNCTION_REFERENCE 'private final fun invokeSuspend$lambda$2 (this$0: com.example.lavenda.GridActivity, $container: @[FlexibleNullability] android.widget.LinearLayout?, habitName: kotlin.String): kotlin.Unit declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>' type=kotlin.Function1<kotlin.String, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+          this$0: GET_FIELD 'FIELD FIELD_FOR_CAPTURED_VALUE name:this$0 type:com.example.lavenda.GridActivity visibility:public/*package*/ [final] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>' type=com.example.lavenda.GridActivity origin=null
+            receiver: GET_VAR '<this>: com.example.lavenda.GridActivity.loadGridData.<no name provided> declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend' type=com.example.lavenda.GridActivity.loadGridData.<no name provided> origin=null
+          $container: GET_FIELD 'FIELD FIELD_FOR_CAPTURED_VALUE name:$container type:@[FlexibleNullability] android.widget.LinearLayout? visibility:public/*package*/ [final] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>' type=@[FlexibleNullability] android.widget.LinearLayout? origin=null
+            receiver: GET_VAR '<this>: com.example.lavenda.GridActivity.loadGridData.<no name provided> declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend' type=com.example.lavenda.GridActivity.loadGridData.<no name provided> origin=null
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:47)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate$default(FunctionCodegen.kt:40)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generateMethodNode(ClassCodegen.kt:406)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generateMethod(ClassCodegen.kt:423)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generate(ClassCodegen.kt:168)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitClass(ExpressionCodegen.kt:1000)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitClass(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.declarations.IrClass.accept(IrClass.kt:72)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:579)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:593)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.visitors.IrElementVisitor$DefaultImpls.visitBlock(IrElementVisitor.kt:122)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlock(ExpressionCodegen.kt:413)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlock(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrBlock.accept(IrBlock.kt:18)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.gen(ExpressionCodegen.kt:217)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrCallGenerator.genValueAndPut(IrCallGenerator.kt:48)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall$handleParameter(ExpressionCodegen.kt:616)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:644)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrCall.accept(IrCall.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:579)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:593)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.visitors.IrElementVisitor$DefaultImpls.visitComposite(IrElementVisitor.kt:125)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitComposite(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitComposite(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrComposite.accept(IrComposite.kt:18)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:579)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:584)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrBlockBody.accept(IrBlockBody.kt:20)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.generate(ExpressionCodegen.kt:240)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.doGenerate(FunctionCodegen.kt:123)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:44)
+	... 54 more
+Caused by: java.lang.RuntimeException: Exception while generating code for:
+FUN INLINE_LAMBDA name:invokeSuspend$lambda$2 visibility:private modality:FINAL <> (this$0:com.example.lavenda.GridActivity, $container:@[FlexibleNullability] android.widget.LinearLayout?, habitName:kotlin.String) returnType:kotlin.Unit
+  VALUE_PARAMETER BOUND_VALUE_PARAMETER name:this$0 index:0 type:com.example.lavenda.GridActivity
+  VALUE_PARAMETER BOUND_VALUE_PARAMETER name:$container index:1 type:@[FlexibleNullability] android.widget.LinearLayout?
+  VALUE_PARAMETER name:habitName index:2 type:kotlin.String
+  BLOCK_BODY
+    VAR name:$i$a$-forEach-GridActivity$loadGridData$1$1 type:kotlin.Int [val]
+      CONST Int type=kotlin.Int value=0
+    VAR name:row type:android.widget.LinearLayout [val]
+      CALL 'public final fun apply <T> (block: @[ExtensionFunctionType] kotlin.Function1<T of kotlin.StandardKt.apply, kotlin.Unit>): T of kotlin.StandardKt.apply [inline] declared in kotlin.StandardKt' type=android.widget.LinearLayout origin=null
+        <T>: android.widget.LinearLayout
+        $receiver: CONSTRUCTOR_CALL 'public constructor <init> (p0: @[FlexibleNullability] android.content.Context?) declared in android.widget.LinearLayout' type=android.widget.LinearLayout origin=null
+          p0: GET_VAR 'this$0: com.example.lavenda.GridActivity declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2' type=com.example.lavenda.GridActivity origin=null
+        block: BLOCK type=@[ExtensionFunctionType] kotlin.Function1<android.widget.LinearLayout, kotlin.Unit> origin=LAMBDA
+          COMPOSITE type=kotlin.Unit origin=null
+          FUNCTION_REFERENCE 'private final fun invokeSuspend$lambda$2$lambda$0 (): kotlin.Unit declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>' type=@[ExtensionFunctionType] kotlin.Function1<android.widget.LinearLayout, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+    VAR name:nameTv type:android.widget.TextView [val]
+      CALL 'public final fun apply <T> (block: @[ExtensionFunctionType] kotlin.Function1<T of kotlin.StandardKt.apply, kotlin.Unit>): T of kotlin.StandardKt.apply [inline] declared in kotlin.StandardKt' type=android.widget.TextView origin=null
+        <T>: android.widget.TextView
+        $receiver: CONSTRUCTOR_CALL 'public constructor <init> (p0: @[FlexibleNullability] android.content.Context?) declared in android.widget.TextView' type=android.widget.TextView origin=null
+          p0: GET_VAR 'this$0: com.example.lavenda.GridActivity declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2' type=com.example.lavenda.GridActivity origin=null
+        block: BLOCK type=@[ExtensionFunctionType] kotlin.Function1<android.widget.TextView, kotlin.Unit> origin=LAMBDA
+          COMPOSITE type=kotlin.Unit origin=null
+          FUNCTION_REFERENCE 'private final fun invokeSuspend$lambda$2$lambda$1 ($habitName: kotlin.String): kotlin.Unit declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>' type=@[ExtensionFunctionType] kotlin.Function1<android.widget.TextView, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+            $habitName: GET_VAR 'habitName: kotlin.String declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2' type=kotlin.String origin=null
+    CALL 'public open fun addView (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit [fake_override] declared in android.widget.LinearLayout' type=kotlin.Unit origin=null
+      $this: GET_VAR 'val row: android.widget.LinearLayout [val] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2' type=android.widget.LinearLayout origin=null
+      p0: GET_VAR 'val nameTv: android.widget.TextView [val] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2' type=android.widget.TextView origin=null
+    BLOCK type=kotlin.Unit origin=FOR_LOOP
+      COMPOSITE type=kotlin.Unit origin=null
+        VAR FOR_LOOP_VARIABLE name:i type:kotlin.Int [var]
+          CONST Int type=kotlin.Int value=1
+      DO_WHILE label=GridActivity$loadGridData$<no name provided>$invokeSuspend$lambda$21 origin=DO_WHILE_COUNTER_LOOP
+        body: COMPOSITE type=kotlin.Unit origin=FOR_LOOP_INNER_WHILE
+          COMPOSITE type=kotlin.Unit origin=FOR_LOOP_NEXT
+            WHEN type=kotlin.Unit origin=null
+              BRANCH
+                if: CALL 'public final fun not (): kotlin.Boolean [operator] declared in kotlin.Boolean' type=kotlin.Boolean origin=null
+                  $this: CALL 'public final fun less (arg0: kotlin.Int, arg1: kotlin.Int): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=null
+                    arg0: GET_VAR 'var i: kotlin.Int [var] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2' type=kotlin.Int origin=null
+                    arg1: CONST Int type=kotlin.Int value=8
+                then: BREAK label=null loop.label=GridActivity$loadGridData$<no name provided>$invokeSuspend$lambda$21
+          BLOCK type=kotlin.Unit origin=null
+            VAR name:cb type:android.widget.CheckBox [val]
+              CONSTRUCTOR_CALL 'public constructor <init> (p0: @[FlexibleNullability] android.content.Context?) declared in android.widget.CheckBox' type=android.widget.CheckBox origin=null
+                p0: GET_VAR 'this$0: com.example.lavenda.GridActivity declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2' type=com.example.lavenda.GridActivity origin=null
+            CALL 'public open fun addView (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit [fake_override] declared in android.widget.LinearLayout' type=kotlin.Unit origin=null
+              $this: GET_VAR 'val row: android.widget.LinearLayout [val] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2' type=android.widget.LinearLayout origin=null
+              p0: GET_VAR 'val cb: android.widget.CheckBox [val] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2' type=android.widget.CheckBox origin=null
+        condition: COMPOSITE type=kotlin.Boolean origin=null
+          CALL 'public final fun <int-prefix-incr-decr> (value: kotlin.Int, delta: kotlin.Int): kotlin.Int declared in kotlin.jvm.internal' type=kotlin.Int origin=null
+            value: GET_VAR 'var i: kotlin.Int [var] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2' type=kotlin.Int origin=null
+            delta: CONST Int type=kotlin.Int value=1
+          CONST Boolean type=kotlin.Boolean value=true
+    CALL 'public open fun addView (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit [fake_override] declared in android.widget.LinearLayout' type=kotlin.Unit origin=null
+      $this: GET_VAR '$container: @[FlexibleNullability] android.widget.LinearLayout? declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2' type=@[FlexibleNullability] android.widget.LinearLayout? origin=null
+      p0: GET_VAR 'val row: android.widget.LinearLayout [val] declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2' type=android.widget.LinearLayout origin=null
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:47)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrSourceCompilerForInline.generateLambdaBody(IrSourceCompilerForInline.kt:67)
+	at org.jetbrains.kotlin.codegen.inline.ExpressionLambda.generateLambdaBody(LambdaInfo.kt:72)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrInlineCodegen.genValueAndPut(IrInlineCodegen.kt:100)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall$handleParameter(ExpressionCodegen.kt:616)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:644)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrCall.accept(IrCall.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:579)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:584)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrBlockBody.accept(IrBlockBody.kt:20)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.generate(ExpressionCodegen.kt:240)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.doGenerate(FunctionCodegen.kt:123)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:44)
+	... 88 more
+Caused by: java.lang.RuntimeException: Exception while generating code for:
+FUN INLINE_LAMBDA name:invokeSuspend$lambda$2$lambda$0 visibility:private modality:FINAL <> ($receiver:android.widget.LinearLayout) returnType:kotlin.Unit
+  $receiver: VALUE_PARAMETER name:$this$apply type:android.widget.LinearLayout
+  BLOCK_BODY
+    VAR name:$i$a$-apply-GridActivity$loadGridData$1$1$row$1 type:kotlin.Int [val]
+      CONST Int type=kotlin.Int value=0
+    CALL 'public open fun setOrientation (p0: kotlin.Int): kotlin.Unit declared in android.widget.LinearLayout' type=kotlin.Unit origin=EQ
+      $this: GET_VAR '$this$apply: android.widget.LinearLayout declared in com.example.lavenda.GridActivity.loadGridData.<no name provided>.invokeSuspend$lambda$2$lambda$0' type=android.widget.LinearLayout origin=null
+      p0: CONST Int type=kotlin.Int value=0
+    SET_FIELD 'FIELD IR_EXTERNAL_JAVA_DECLARATION_STUB name:padding type:kotlin.Int visibility:public [final,static] declared in android.R.attr' type=kotlin.Unit superQualifierSymbol=android.R.attr origin=EQ
+      value: CONST Int type=kotlin.Int value=20
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:47)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrSourceCompilerForInline.generateLambdaBody(IrSourceCompilerForInline.kt:67)
+	at org.jetbrains.kotlin.codegen.inline.ExpressionLambda.generateLambdaBody(LambdaInfo.kt:72)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrInlineCodegen.genValueAndPut(IrInlineCodegen.kt:100)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall$handleParameter(ExpressionCodegen.kt:616)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:644)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrCall.accept(IrCall.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitVariable(ExpressionCodegen.kt:790)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitVariable(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.declarations.IrVariable.accept(IrVariable.kt:36)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:579)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:584)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrBlockBody.accept(IrBlockBody.kt:20)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.generate(ExpressionCodegen.kt:240)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.doGenerate(FunctionCodegen.kt:123)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:44)
+	... 102 more
+Caused by: java.lang.AssertionError: access of const val: SET_FIELD 'FIELD IR_EXTERNAL_JAVA_DECLARATION_STUB name:padding type:kotlin.Int visibility:public [final,static] declared in android.R.attr' type=kotlin.Unit superQualifierSymbol=android.R.attr origin=EQ
+  value: CONST Int type=kotlin.Int value=20
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitFieldAccess(ExpressionCodegen.kt:861)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitFieldAccess(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.visitors.IrElementVisitor$DefaultImpls.visitSetField(IrElementVisitor.kt:206)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitSetField(ExpressionCodegen.kt:908)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitSetField(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrSetField.accept(IrSetField.kt:21)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:579)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:584)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrBlockBody.accept(IrBlockBody.kt:20)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.generate(ExpressionCodegen.kt:240)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.doGenerate(FunctionCodegen.kt:123)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:44)
+	... 119 more
+
+

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="lavenda_primary">#FFFFFF</color> <color name="lavenda_accent">#FFFFFF</color>
+    <color name="streak_orange">#FF9800</color>
+
+    <color name="app_background">#121212</color> <color name="text_title">#FFFFFF</color> <color name="text_subtitle">#BDBDBD</color> <color name="text_input">#FFFFFF</color> <color name="item_background">#333333</color> </resources>
